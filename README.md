@@ -12,10 +12,12 @@ Used data from football-data.co.uk, 2021/22 to 2024/25 Premier League seasons (1
 ## Results
 - Accuracy on the 2024/25 test season: 48.0%
 - Baseline (always predict home win): 41.1%
-- Correctly predicts 78% of home wins and 46% of away wins, but 0% if draws
+- Correctly predicts 78% of home wins and 46% of away wins, but 0% of draws
 
 ## Limitations
 - Tested on a single season (375 matches), so the 7-point edge over the baseline could partly be noise
 - Only uses recent goals scored/conceded; ignores team quality, injuries, and home advantage by team
 - Never predicts draws, which caps its accuracy
 
+## Why shift(1)?
+Each matches form average only uses earlier games, because the matches own score isn't known before kickoff. Using shift(1) would let the model read the answer.
